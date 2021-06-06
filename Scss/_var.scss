@@ -1,6 +1,6 @@
 $header-height: 3rem;
 
-$hue-color: 250;
+$hue-color: 142; // purple 250 - green 142 - blue 230 - pink 340
 
 $first-color: hsl($hue-color, 69%, 61%);
 $first-color-second: hsl($hue-color, 69%, 61%);
@@ -11,6 +11,8 @@ $text-color: hsl($hue-color, 8%, 45%);
 $text-color-light: hsl($hue-color, 5%, 65%);
 $input-color: hsl($hue-color, 70%, 96%);
 $body-color: hsl($hue-color, 60%, 99%);
+$scroll-bar-color: hsl($hue-color, 12%, 90%);
+$scroll-thumb-color: hsl($hue-color, 12%, 80%);
 $container-color: #fff;
 
 $body-font: "Poppins", sans-serif;
@@ -47,4 +49,64 @@ $z-modal: 1000;
 	$normal-font-size: 1rem;
 	$small-font-size: 0.875rem;
 	$smaller-font-size: 0.813rem;
+}
+
+// dark theme
+
+@mixin dark {
+	@if $first-color-second == hsl($hue-color, 69%, 61%) {
+		$first-color-second: hsl($hue-color, 30%, 8%);
+		$title-color: hsl($hue-color, 8%, 95%);
+		$text-color: hsl($hue-color, 8%, 75%);
+		$input-color: hsl($hue-color, 29%, 16%);
+		$body-color: hsl($hue-color, 28%, 12%);
+		$container-color: hsl($hue-color, 29%, 16%);
+		$scroll-bar-color: hsl($hue-color, 12%, 48%);
+		$scroll-thumb-color: hsl($hue-color, 12%, 36%);
+		.project_bg,
+		.footer_bg {
+			background-color: $first-color-second;
+		}
+		.change-theme,
+		h1,
+		h2,
+		h3,
+		h4,
+		.nav_logo,
+		.nav_toggle,
+		.nav_link,
+		.home_scroll-name,
+		.about_info-title,
+		.contact_label {
+			color: $title-color;
+		}
+		.home_subtitle,
+		.contact_input {
+			color: $text-color;
+		}
+		.contact_content,
+		.contact_input {
+			background-color: $input-color;
+		}
+		header {
+			background-color: $body-color;
+		}
+		.services_content,
+		.services_modal-content {
+			background-color: $container-color;
+		}
+		@media screen and (max-width: 767px) {
+			.nav_menu {
+				background-color: $body-color;
+			}
+		}
+		@media screen and (min-width: 767px) {
+			.project_container {
+				background-color: $first-color-second;
+			}
+			.project_bg {
+				background-color: $body-color;
+			}
+		}
+	}
 }
